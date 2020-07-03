@@ -1,11 +1,18 @@
 FROM python:3.7
-RUN mkdir /code
-WORKDIR /code
-COPY requirements.txt /code/
-RUN pip install -r requirements.txt
-COPY . /code/
 
-# Server
+# create and set working directory
+RUN mkdir /app
+WORKDIR /app
+
+# Add current directory code to working directory
+ADD . /app/
+
+# set environment variables
+ENV PYTHONDONTWRITEBYTECODE 1
+ENV PYTHONUNBUFFERED 1
+RUN pip install -r requirements.txt
+RUN cd /app
+RUN ls
 EXPOSE 8002
 STOPSIGNAL SIGINT
 ENTRYPOINT ["python", "manage.py"]
