@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #fff">
+<br>
+      {% for obj in qs %}
+
+<div class="container">
+  <div style="background-color: #dc3545;min-height: 60px;">
+     <h4 style="text-align: center;color: #fff;padding: 15px;">{{obj.Name_OR}}</h4>      
+      </div>
+  <table class="table">
+    <tbody style="color:#606060">
+      <tr>
+        <td>ବିଭାଗ</td>
+        <td>{{obj.Department_OR}}</td>
+      </tr>
+      <tr>
+        <td>ବିଜ୍ଞପ୍ତି ତାରିଖ</td>
+        <td>{{obj.Notification_Date}}</td>
+      </tr>
+      <tr>
+        <td>ଶେଷ ତାରିଖ</td>
+        <td>{{obj.LastDate}}</td>
+      </tr>
+      <tr>
+        <td>ଯୋଗ୍ୟତା</td>
+        <td>{{obj.Education}}</td>
+      </tr>
+      <tr>
+        <td>ବୟସ ସୀମା</td>
+        <td>{{obj.Age_Limit}}</td>
+      </tr>
+      <tr>
+        <td>କର୍ମକ୍ଷେତ୍ର</td>
+        <td>{{obj.Location}}</td>
+      </tr>
+      <tr>
+        <td>ଆବେଦନ ଶୁଳ୍କ </td>
+        <td>{{obj.Application_Fees}}</td>
+      </tr>
+    </tbody>
+  </table>
+    
+<div style="border: 1px solid #c0c0c0;border-radius: 10px;padding: 5px;">
+    <p>ଚୟନ ପ୍ରକ୍ରିୟା:</p>
+    <p>{{obj.Selection_Process_OR}}</p>
+    <br>
+    <p>ଆବେଦନ ପତ୍ର:</p>
+    <p>{{obj.How_To_Apply_OR}}</p>
+    <br>
+</div>
+  <br>
+
+  <a href="{{obj.Pdf_link}}" class="btn btn-secondary btn-block">ಅಧಿಸೂಚನೆ</a>
+
+  <a href="{{obj.Official_Notification}}" class="btn btn-secondary btn-block">ಅಧಿಕೃತ ಅಧಿಸೂಚನೆ</a>
+
+  <br>
+  <br>
+    {% endfor %}
+
+</div>
+</body>
+</html>

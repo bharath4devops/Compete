@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #F7F7F6">
+<br>
+<div class="container">
+
+    {% for obj in qs %}
+
+  <ul class="list-group" style="padding-bottom: 5px">
+    <li class="list-group-item"><a href="#"><a style="text-decoration: none;color: #000;" href="../detail_or/{{obj.JobId}}">
+      <h5>{{obj.Name}}</h5>
+      <hr>
+      <p style="font-size:15px;">{{obj.Department}}</p>
+      <p style="font-size:12px;width: 100%;text-align: right;color:#a0a0a0;">{{obj.Notification_Date}}</p>
+    </li></a>
+  </ul>
+    {% endfor %}
+
+  <br>  <br>
+</div>
+</body>
+</html>

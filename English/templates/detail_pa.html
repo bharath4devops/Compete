@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pa">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body style="background-color: #fff">
+<br>
+      {% for obj in qs %}
+
+<div class="container">
+      <div style="background-color: #dc3545;min-height: 60px;">
+     <h4 style="text-align: center;color: #fff;padding: 15px;">{{obj.Name_PA}}</h4>      
+      </div>
+  <table class="table">
+    <tbody style="color:#606060">
+      <tr>
+        <td style="color: #000;">ਵਿਭਾਗ</td>
+        <td>{{obj.Department_PA}}</td>
+      </tr>
+      <tr>
+        <td style="color: #000;">ਸੂਚਨਾ ਦੀ ਮਿਤੀ</td>
+        <td>{{obj.Notification_Date}}</td>
+      </tr>
+      <tr>
+        <td style="color: #000;">ਆਖਰੀ ਤਾਰੀਖ</td>
+        <td>{{obj.LastDate}}</td>
+      </tr>
+      <tr>
+        <td style="color: #000;">ਯੋਗਤਾ</td>
+        <td>{{obj.Education}}</td>
+      </tr>
+      <tr>
+        <td style="color: #000;">ਉਮਰ ਦੀ ਹੱਦ</td>
+        <td>{{obj.Age_Limit}}</td>
+      </tr>
+      <tr>
+        <td style="color: #000;">ਕਾਰਜ ਸਥਾਨ </td>
+        <td>{{obj.Location}}</td>
+      </tr>
+      <tr>
+        <td style="color: #000;">ਅਰਜ਼ੀ ਦੀ ਫੀਸ</td>
+        <td>{{obj.Application_Fees}}</td>
+      </tr>
+    </tbody>
+  </table>
+    
+<div style="border: 1px solid #c0c0c0;border-radius: 10px;padding: 5px;">
+    <p>ਚੋਣ ਪ੍ਰਕਿਰਿਆ:</p>
+    <p style="color:#606060;" >{{obj.Selection_Process_PA}}</p>
+    <br>
+    <p>ਐਪਲੀਕੇਸ਼ਨ ਜਮ੍ਹਾ :</p>
+    <p style="color:#606060;" >{{obj.How_To_Apply_PA}}</p>
+    <br>
+</div>
+  <br>
+
+  <a href="{{obj.Pdf_link}}" class="btn btn-danger btn-block">Notification</a>
+
+  <a href="{{obj.Official_Notification}}" class="btn btn-danger btn-block">ਅਧਿਕਾਰਤ ਨੋਟੀਫਿਕੇਸ਼ਨ</a>
+
+  <br>
+  <br>
+    {% endfor %}
+
+</div>
+</body>
+</html>
